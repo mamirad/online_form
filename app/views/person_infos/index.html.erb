@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Person Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cnic</th>
+      <th>Age</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Mobile</th>
+      <th>Apply for</th>
+      <th>Area</th>
+      <th>Detail area research</th>
+      <th>Cv upload</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @person_infos.each do |person_info| %>
+      <tr>
+        <td><%= person_info.name %></td>
+        <td><%= person_info.cnic %></td>
+        <td><%= person_info.age %></td>
+        <td><%= person_info.age %></td>
+        <td><%= person_info.gender %></td>
+        <td><%= person_info.address %></td>
+        <td><%= person_info.mobile %></td>
+        <td><%= person_info.apply_for %></td>
+        <td><%= person_info.area %></td>
+        <td><%= person_info.detail_area_research %></td>
+        <td>
+           <%= image_tag(person_info.cv_upload.url, size: "300x300") if person_info.cv_upload?  %>
+        </td>
+        <td><%= link_to 'Show', person_info %></td>
+        <td><%= link_to 'Edit', edit_person_info_path(person_info) %></td>
+        <td><%= link_to 'Destroy', person_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person Info', new_person_info_path %>

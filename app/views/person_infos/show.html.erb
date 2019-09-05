@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person_info.name %>
+</p>
+
+<p>
+  <strong>Cnic:</strong>
+  <%= @person_info.cnic %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @person_info.age %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @person_info.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @person_info.gender %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @person_info.address %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @person_info.mobile %>
+</p>
+
+<p>
+  <strong>Apply for:</strong>
+  <%= @person_info.apply_for %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @person_info.area %>
+</p>
+
+<p>
+  <strong>Detail area research:</strong>
+  <%= @person_info.detail_area_research %>
+</p>
+
+<p>
+  <strong>Cv upload:</strong>
+
+  <%= image_tag(@person_info.cv_upload.url, size: "300x300")  %>
+</p>
+
+<%= link_to 'Edit', edit_person_info_path(@person_info) %> |
+<%= link_to 'Back', person_infos_path %>
