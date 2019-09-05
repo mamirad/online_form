@@ -9,7 +9,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'carrierwave'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -45,6 +45,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -63,3 +64,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'pg'
+
+end
